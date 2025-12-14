@@ -1236,7 +1236,7 @@ int main(int argc, char **argv) {
 
 		// s6 wants a newline and ignores any text before that, systemd wants
 		// READY=1, so use the least common denominator
-		const char ready_str[] = "READY=1\n";
+		const char ready_str[] = "READY=1";
 		if (write(state.args.ready_fd, ready_str, strlen(ready_str)) != strlen(ready_str)) {
 			swaylock_log(LOG_ERROR, "Failed to send readiness notification");
 			return 2;
